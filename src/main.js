@@ -3,6 +3,7 @@ require('dotenv').config();
 // bring in express framework
 const express = require('express');
 //bring in bodyParser
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const usersRoutes = require('./routes/users');
 const requestRoutes = require('./routes/requests');
@@ -12,7 +13,7 @@ const app = express();
 app.use(express.static('public'));
 // use to read the body data from the request
 app.use(bodyParser.json());
-
+app.use(cors());
 app.use(usersRoutes);
 app.use(requestRoutes);
 
