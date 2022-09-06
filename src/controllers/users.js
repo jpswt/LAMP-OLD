@@ -13,6 +13,7 @@ const registerVolunteer = async (req, res) => {
 		username: input.username,
 		email: input.email,
 		pw_hash: pwHash,
+		isOrg: input.isOrg,
 	};
 
 	try {
@@ -35,7 +36,7 @@ const registerOrganization = async (req, res) => {
 		username: input.username,
 		email: input.email,
 		pw_hash: pwHash,
-		isOrg: 1,
+		isOrg: input.isOrg,
 		address: input.address,
 		phone: input.phone,
 	};
