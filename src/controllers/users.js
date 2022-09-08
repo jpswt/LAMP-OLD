@@ -77,13 +77,15 @@ const login = async (req, res) => {
 
 			if (goodPassword) {
 				let signedToken = jwt.sign(token, process.env.JWT_SECRET);
-				res.cookie('token', signedToken, { maxAge: 900000 });
+				res.cookie('Bearer', signedToken, { maxAge: 900000 });
 				// return res.json({ signedToken, email, userId, userName, isOrg });
 				// res.send(signedToken);
 				// res.cookie('access-token', signedToken, {
 				// 	maxAge: 60 * 60 * 24 * 30 * 1000,
 				// });
-				res.send('cookies are sent');
+				res
+					.header('Authorization', `Bearer ${signedToken}`)
+					.send('cookies are sent');
 			} else {
 				res.sendStatus(400);
 			}
