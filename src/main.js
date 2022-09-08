@@ -13,7 +13,11 @@ const app = express();
 app.use(express.static('public'));
 // use to read the body data from the request
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+	cors({
+		exposedHeaders: 'Authorization',
+	})
+);
 app.use(usersRoutes);
 app.use(requestRoutes);
 
