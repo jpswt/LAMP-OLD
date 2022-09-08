@@ -17,7 +17,7 @@ const getAllUsers = async () => {
 };
 
 const getUser = async (userId) => {
-	let sql = 'select id, name, username, email from users1 where id = ?';
+	let sql = 'select id, name, username, email, isOrg from users1 where id = ?';
 	return helper.promisify(sql, userId);
 };
 
