@@ -79,10 +79,11 @@ const login = async (req, res) => {
 				let signedToken = jwt.sign(token, process.env.JWT_SECRET);
 				res.cookie('token', signedToken, { httpOnly: true });
 				// return res.json({ signedToken, email, userId, userName, isOrg });
-				res.send({ signedToken, email, userId, userName, isOrg });
+				// res.send(signedToken);
 				// res.cookie('access-token', signedToken, {
 				// 	maxAge: 60 * 60 * 24 * 30 * 1000,
 				// });
+				res.send('cookies are sent');
 			} else {
 				res.sendStatus(400);
 			}
