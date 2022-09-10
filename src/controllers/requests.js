@@ -41,6 +41,7 @@ let sendRequest = async (req, res) => {
 		task_code: input.task_code,
 		start_time: input.start_time,
 		time_span: input.time_span,
+		message: input.message,
 		created_on: date,
 	};
 	try {
