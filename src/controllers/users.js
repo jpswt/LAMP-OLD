@@ -83,15 +83,13 @@ const login = async (req, res) => {
 				// res.cookie('access-token', signedToken, {
 				// 	maxAge: 60 * 60 * 24 * 30 * 1000,
 				// });
-				res
-					.header('Authorization', `Bearer ${signedToken}`)
-					.send('cookies are sent', {
-						signedToken,
-						email,
-						userId,
-						userName,
-						isOrg,
-					});
+				res.header('Authorization', `Bearer ${signedToken}`).send({
+					signedToken,
+					email,
+					userId,
+					userName,
+					isOrg,
+				});
 			} else {
 				res.sendStatus(400);
 			}
