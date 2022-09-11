@@ -16,11 +16,7 @@ router.get(
 	requestController.receivedOrgRequests
 );
 
-router.post(
-	'/users/sendRequest',
-	// auth.verifyJWT,
-	requestController.sendRequest
-);
+router.post('/users/sendRequest', requestController.sendRequest);
 
 router.put(
 	'/users/acceptReq/:id',
