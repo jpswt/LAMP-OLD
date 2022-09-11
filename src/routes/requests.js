@@ -18,7 +18,7 @@ router.get(
 
 router.post(
 	'/users/sendRequest',
-	auth.verifyJWT,
+	// auth.verifyJWT,
 	requestController.sendRequest
 );
 
