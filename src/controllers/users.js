@@ -85,7 +85,13 @@ const login = async (req, res) => {
 				// });
 				res
 					.header('Authorization', `Bearer ${signedToken}`)
-					.send('cookies are sent');
+					.send('cookies are sent', {
+						signedToken,
+						email,
+						userId,
+						userName,
+						isOrg,
+					});
 			} else {
 				res.sendStatus(400);
 			}

@@ -36,9 +36,8 @@ let sendRequest = async (req, res) => {
 	let input = req.body;
 	let date = new Date();
 	let data = {
-		org_id: input.org_id,
 		vol_username: userName,
-		task_code: input.task_code,
+		org_id: input.org_id,
 		start_time: input.start_time,
 		time_span: input.time_span,
 		message: input.message,
