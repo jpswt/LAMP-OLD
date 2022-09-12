@@ -2,7 +2,7 @@ const helper = require('../helper/promisify');
 
 const sentVolRequests = (userName) => {
 	let sql =
-		'select org_id, users1.name, start_time, time_span, message, created_on, isAccepted from request join users1 on request.vol_username = users1.username where vol_username = ? order by created_on desc';
+		'select users1.name, org_id, start_time, time_span, message, created_on, accepted from request join users1 on request.vol_username = users1.username where vol_username = ? order by created_on desc';
 	return helper.promisify(sql, userName);
 };
 
