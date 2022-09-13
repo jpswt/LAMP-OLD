@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 8040;
 
 app.get('/', (req, res) => {
 	console.log('get home');
-	res.send('Welcome to My App');
+	res.send('Welcome to LAMP');
 });
 
 app.listen(PORT, () => {
