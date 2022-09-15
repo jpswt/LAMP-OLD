@@ -19,15 +19,15 @@ const sendRequest = (data, userName) => {
 	return helper.promisify(sql, params);
 };
 
-const acceptRequest = (isAccepted, id) => {
-	let sql = 'update request set isAccepted = ? where id = ?';
-	let params = [isAccepted, id];
+const acceptRequest = (accepted, id) => {
+	let sql = 'update request set accepted = ? where id = ?';
+	let params = [accepted, id];
 	return helper.promisify(sql, params);
 };
 
-const declineRequest = (isAccepted, id) => {
-	let sql = 'update request set isAccepted = ? where id = ?';
-	let params = [isAccepted, id];
+const declineRequest = (accepted, id) => {
+	let sql = 'update request set accepted = ? where id = ?';
+	let params = [accepted, id];
 	return helper.promisify(sql, params);
 };
 
