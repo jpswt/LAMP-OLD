@@ -74,7 +74,7 @@ let acceptRequest = async (req, res) => {
 
 let declineRequest = async (req, res) => {
 	console.log('Decline a volunteer request');
-	let id = req.params.id;
+	let id = req.body.id;
 	let accepted = 0;
 	try {
 		let results = await modelRequests.declineRequest(accepted, id);
