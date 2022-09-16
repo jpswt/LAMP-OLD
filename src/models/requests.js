@@ -9,7 +9,7 @@ const sentVolRequests = (userName) => {
 
 const receivedOrgRequests = (userId) => {
 	let sql =
-		'select request.id, users1.username, users1.name, users1.email, start_time, time_span, message, created_on, accepted from request join users1 on request.vol_username = users1.username where org_id = ? order by created_on desc';
+		'select request.id, users1.username, users1.name, users1.email, start_date, start_time, time_span, message, created_on, accepted from request join users1 on request.vol_username = users1.username where org_id = ? order by created_on desc';
 	return helper.promisify(sql, userId);
 };
 
