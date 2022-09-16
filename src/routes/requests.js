@@ -30,7 +30,7 @@ router.put(
 );
 
 router.put(
-	'/users/declineReq/:id',
+	'/users/declineReq',
 	auth.verifyJWT,
 	auth.verifyOrg,
 	requestController.declineRequest
