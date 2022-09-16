@@ -55,7 +55,7 @@ let sendRequest = async (req, res) => {
 
 let acceptRequest = async (req, res) => {
 	console.log('Accept a volunteer request');
-	let id = req.params.id;
+	let id = req.body.id;
 	let accepted = 1;
 	try {
 		let results = await modelRequests.acceptRequest(accepted, id);

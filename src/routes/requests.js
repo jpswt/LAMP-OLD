@@ -23,7 +23,7 @@ router.post(
 );
 
 router.put(
-	'/users/acceptReq/:id',
+	'/users/acceptReq/',
 	auth.verifyJWT,
 	auth.verifyOrg,
 	requestController.acceptRequest
