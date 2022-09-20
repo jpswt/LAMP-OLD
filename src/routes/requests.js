@@ -36,13 +36,6 @@ router.put(
 	requestController.declineRequest
 );
 
-router.put(
-	'/users/undoReq',
-	auth.verifyJWT,
-	auth.verifyOrg,
-	requestController.undoRequest
-);
-
 router.delete(
 	'/users/deleteReq/:id',
 	auth.verifyJWT,

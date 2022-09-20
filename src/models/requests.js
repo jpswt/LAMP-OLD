@@ -31,12 +31,6 @@ const declineRequest = (accepted, id) => {
 	return helper.promisify(sql, params);
 };
 
-const undoRequest = (accepted, id) => {
-	let sql = 'update request set accepted = ? where id = ?';
-	let params = [accepted, id];
-	return helper.promisify(sql, params);
-};
-
 const deleteRequest = (id, userName) => {
 	let sql = 'delete from request where id = ? and vol_username = ?';
 	let params = [id, userName];
@@ -49,6 +43,5 @@ module.exports = {
 	sendRequest,
 	acceptRequest,
 	declineRequest,
-	undoRequest,
 	deleteRequest,
 };

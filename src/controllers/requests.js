@@ -91,25 +91,6 @@ let declineRequest = async (req, res) => {
 	}
 };
 
-let undoRequest = async (req, res) => {
-	console.log('Undo accept of volunteer request');
-	let id = req.body.id;
-	let accepted = null;
-	try {
-		let results = await modelRequests.undoRequest(accepted, id);
-		if (results.affectedRows == 1) {
-			res
-				.status(200)
-				.send(`Successfully undo an accepted volunteer request with id ${id}`);
-		} else {
-			res.sendStatus(400);
-		}
-	} catch (err) {
-		console.log('Could not get execute query to decline request', err);
-		res.sendStatus(400);
-	}
-};
-
 let deleteRequest = async (req, res) => {
 	console.log('Delete volunteer request');
 	let id = req.params.id;
@@ -131,7 +112,6 @@ module.exports = {
 	receivedOrgRequests,
 	sendRequest,
 	acceptRequest,
-	undoRequest,
 	declineRequest,
 	deleteRequest,
 };
