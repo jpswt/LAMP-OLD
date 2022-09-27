@@ -93,7 +93,7 @@ let declineRequest = async (req, res) => {
 
 let deleteRequest = async (req, res) => {
 	console.log('Delete volunteer request');
-	let id = req.params.id;
+	let id = req.body.id;
 	let token = req.user_token;
 	let userName = token.user_name;
 	try {
