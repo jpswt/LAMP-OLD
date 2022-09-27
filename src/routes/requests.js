@@ -37,7 +37,7 @@ router.put(
 );
 
 router.delete(
-	'/users/deleteReq/:id',
+	'/users/deleteReq',
 	auth.verifyJWT,
 	requestController.deleteRequest
 );
