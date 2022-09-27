@@ -39,6 +39,7 @@ const registerOrganization = async (req, res) => {
 		isOrg: input.isOrg,
 		address: input.address,
 		phone: input.phone,
+		website: input.website,
 	};
 
 	try {
