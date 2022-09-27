@@ -31,9 +31,9 @@ const declineRequest = (accepted, id) => {
 	return helper.promisify(sql, params);
 };
 
-const deleteRequest = (id, userName) => {
-	let sql = 'delete from request where id = ? and vol_username = ?';
-	let params = [id, userName];
+const deleteRequest = (id) => {
+	let sql = 'delete from request where id = ?';
+	let params = [id];
 	return helper.promisify(sql, params);
 };
 

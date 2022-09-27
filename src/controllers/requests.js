@@ -97,7 +97,7 @@ let deleteRequest = async (req, res) => {
 	let token = req.user_token;
 	let userName = token.user_name;
 	try {
-		let results = await modelRequests.deleteRequest(id, userName);
+		let results = await modelRequests.deleteRequest(id);
 		res
 			.status(200)
 			.send(`Successfully deleted volunteer request with id: ${id}`);
