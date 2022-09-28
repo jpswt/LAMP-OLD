@@ -33,7 +33,7 @@ const volunteersList = async (isOrg) => {
 
 const organizationsList = async (isOrg) => {
 	let sql =
-		'select id, name, username, email, address, phone from users1 where isOrg = ?';
+		'select id, name, username, email, address, phone, website from users1 where isOrg = ?';
 	return helper.promisify(sql, isOrg);
 };
 
