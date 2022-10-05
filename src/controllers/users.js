@@ -127,17 +127,6 @@ let getUser = async (req, res) => {
 		res.sendStatus(400);
 	}
 };
-// function to get a list of all user email addresses
-let emailList = async (req, res) => {
-	console.log('List of all emails');
-	try {
-		let results = await modelUsers.emailList();
-		res.json(results);
-	} catch (err) {
-		console.log('Could not get email list');
-		res.sendStatus(400);
-	}
-};
 // function to get a list of all volunteers
 let volunteersList = async (req, res) => {
 	console.log('All volunteers information');

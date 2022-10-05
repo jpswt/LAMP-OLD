@@ -9,7 +9,6 @@ router.post('/login', userController.login);
 
 router.get('/users/allUsers', auth.verifyJWT, userController.getAllUsers);
 router.get('/users/user', auth.verifyJWT, userController.getUser);
-router.get('/users/emailList', auth.verifyJWT, userController.emailList);
 router.get('/users/volsList', userController.volunteersList);
 router.get('/users/orgsList', userController.organizationsList);
 
