@@ -2,6 +2,7 @@ let jwt = require('jsonwebtoken');
 let argon2 = require('argon2');
 let modelUsers = require('../models/users');
 
+// function that registers a volunteer
 const registerVolunteer = async (req, res) => {
 	console.log('register volunteer');
 	let input = req.body;
@@ -25,6 +26,7 @@ const registerVolunteer = async (req, res) => {
 	}
 };
 
+//function that registers an organization
 const registerOrganization = async (req, res) => {
 	console.log('register organization');
 	let input = req.body;
@@ -51,7 +53,7 @@ const registerOrganization = async (req, res) => {
 	}
 };
 
-// takes in user name and return a JWT, which can be used in subsequent
+// takes in email and username and return a JWT, which can be used in subsequent
 // requests to prove the user in authenticated
 const login = async (req, res) => {
 	console.log('login');
@@ -79,11 +81,6 @@ const login = async (req, res) => {
 			if (goodPassword) {
 				let signedToken = jwt.sign(token, process.env.JWT_SECRET);
 				res.cookie('Bearer', signedToken, { maxAge: 900000 });
-				// return res.json({ signedToken, email, userId, userName, isOrg });
-				// res.send(signedToken);
-				// res.cookie('access-token', signedToken, {
-				// 	maxAge: 60 * 60 * 24 * 30 * 1000,
-				// });
 				res.header('Authorization', `Bearer ${signedToken}`).send({
 					signedToken,
 					email,
@@ -106,7 +103,7 @@ const login = async (req, res) => {
 		console.log('Could not get password hash', err);
 	}
 };
-
+//function to get a list of all users
 let getAllUsers = async (req, res) => {
 	console.log('Get all user information');
 	try {
@@ -117,7 +114,7 @@ let getAllUsers = async (req, res) => {
 		res.sendStatus(400);
 	}
 };
-
+//function to get a user by id
 let getUser = async (req, res) => {
 	console.log('Get single user information by id');
 	let token = req.user_token;
@@ -130,7 +127,7 @@ let getUser = async (req, res) => {
 		res.sendStatus(400);
 	}
 };
-
+// function to get a list of all user email addresses
 let emailList = async (req, res) => {
 	console.log('List of all emails');
 	try {
@@ -141,7 +138,7 @@ let emailList = async (req, res) => {
 		res.sendStatus(400);
 	}
 };
-
+// function to get a list of all volunteers
 let volunteersList = async (req, res) => {
 	console.log('All volunteers information');
 	let isOrg = 0;
@@ -153,7 +150,7 @@ let volunteersList = async (req, res) => {
 		res.sendStatus(400);
 	}
 };
-
+//function to get a list of all organizations
 let organizationsList = async (req, res) => {
 	console.log('All organizations information');
 	let isOrg = 1;

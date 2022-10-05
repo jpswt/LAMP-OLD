@@ -1,5 +1,6 @@
 const modelRequests = require('../models/requests');
 
+//function that will create a list send request by a each user based on their token id
 let sentVolRequests = async (req, res) => {
 	console.log('Get volunteer request');
 	let token = req.user_token;
@@ -12,7 +13,7 @@ let sentVolRequests = async (req, res) => {
 		res.sendStatus(400);
 	}
 };
-
+// function that allows organizations to view list of requests sent by user with specific token id
 let receivedOrgRequests = async (req, res) => {
 	console.log('Get requests received by organization');
 	let token = req.user_token;
@@ -29,6 +30,7 @@ let receivedOrgRequests = async (req, res) => {
 	}
 };
 
+// function that creates the request information for the user by token id
 let sendRequest = async (req, res) => {
 	console.log('Send a request');
 	let token = req.user_token;
@@ -53,6 +55,7 @@ let sendRequest = async (req, res) => {
 	}
 };
 
+//function that accepts the request based on input from the req.body by id
 let acceptRequest = async (req, res) => {
 	console.log('Accept a volunteer request');
 	let id = req.body.id;
@@ -72,6 +75,7 @@ let acceptRequest = async (req, res) => {
 	}
 };
 
+//function that declines the request based on input from the req.body by id
 let declineRequest = async (req, res) => {
 	console.log('Decline a volunteer request');
 	let id = req.body.id;
@@ -91,6 +95,7 @@ let declineRequest = async (req, res) => {
 	}
 };
 
+// function that will delete a request from both user and organization
 let deleteRequest = async (req, res) => {
 	console.log('Delete volunteer request');
 	let id = req.body.id;

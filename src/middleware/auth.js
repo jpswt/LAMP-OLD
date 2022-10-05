@@ -23,7 +23,7 @@ let verifyJWT = (req, res, next) => {
 		res.sendStatus(400);
 	}
 };
-
+// verify that the user token for an org exists, if it does proceed to the controller portion of route
 let verifyOrg = (req, res, next) => {
 	if (req.user_token.isOrg) {
 		next();
@@ -31,13 +31,13 @@ let verifyOrg = (req, res, next) => {
 		res.sendStatus(400);
 	}
 };
-
-let verifyAdmin = (req, res, next) => {
-	if (req.user_token.isAdmin) {
-		next();
-	} else {
-		res.sendStatus(400);
-	}
-};
+// verify that the user token for an admin exists, if it does proceed to the controller portion of route
+// let verifyAdmin = (req, res, next) => {
+// 	if (req.user_token.isAdmin) {
+// 		next();
+// 	} else {
+// 		res.sendStatus(400);
+// 	}
+// };
 
 module.exports = { verifyJWT, verifyOrg, verifyAdmin };
