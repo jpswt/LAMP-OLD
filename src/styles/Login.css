@@ -1,0 +1,152 @@
+.login {
+	background-color: hsl(0, 0%, 90%);
+	color: #fff;
+	margin: auto;
+	min-height: 100%;
+	min-width: 100%;
+}
+
+.login .choose-user {
+	width: 100%;
+	padding: 0;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 1rem;
+}
+
+.login .user-type {
+	padding: 0.5rem 1rem;
+	margin-top: 1rem;
+	/* margin: 5px; */
+	/* width: 40%; */
+	border: 2px solid #f8f8f8;
+	cursor: pointer;
+}
+.login button {
+	border: 2px solid var(--primary-color);
+	font-size: 1.1rem;
+	padding: 0.5rem 1rem;
+	background-color: transparent;
+	margin-top: 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.login button:hover :focus {
+	border-color: var(--primary-color);
+	color: var(--primary-color);
+}
+
+.login .active {
+	background-color: var(--primary-color);
+	color: white;
+	border: 2px solid #959595;
+}
+
+.login .content {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.login .content .image {
+	width: 100%;
+	height: 100vh;
+	min-height: 100%;
+	margin-bottom: 0;
+	object-fit: cover;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.login .col-1 {
+	width: 100%;
+	min-height: 100%;
+	/* margin-bottom: 2rem; */
+}
+
+.login .col-2 {
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login .col-2 .logo {
+	width: 130px;
+	padding: 1rem 0.5rem 0 0.5rem;
+	/* height: auto; */
+}
+
+.login .col-2 .selection {
+	width: 100%;
+	margin-top: 1rem;
+	margin-left: 8rem;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.choose-user {
+	margin: 0;
+}
+
+.login .button {
+	margin: 1.5rem 0 1.5rem 0;
+	width: 50%;
+	padding: 0.5rem;
+	background-color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+	color: var(--secondary-accent);
+}
+
+.login .button:hover {
+	background-color: var(--primary-dark);
+	border: 1px solid var(--primary-dark);
+	color: hsl(0, 0%, 90%);
+}
+
+.login a {
+	color: var(--primary-color);
+	cursor: pointer;
+}
+
+.login .error {
+	font-size: 1.1rem;
+	color: black;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 940px) {
+	.login {
+		min-width: 100%;
+		min-height: 100%;
+	}
+	.login .content {
+		grid-template-columns: 1fr;
+	}
+
+	.login .content {
+		min-width: 100%;
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.login .content .image {
+		width: 100%;
+		height: 50%;
+		display: none;
+	}
+
+	.about .container .col-2 {
+		padding: 0;
+	}
+
+	.about button {
+		margin-bottom: 1rem;
+	}
+}

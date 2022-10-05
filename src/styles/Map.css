@@ -1,0 +1,17 @@
+.gm-style-iw {
+	width: 250px !important;
+	top: 15px !important;
+	left: 0 !important;
+	background-color: red;
+	box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+	border: 1px solid var(--primary-color);
+	border-radius: 2px 2px 10px 10px;
+	color: red;
+	font-weight: bold;
+}
+
+.gm-style .gm-style-iw {
+	color: var(--secondary-dark);
+	font-size: 14px;
+	font-weight: bold;
+}

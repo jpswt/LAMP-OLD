@@ -1,0 +1,63 @@
+.requestContainer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.requestGrid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	/* margin: 0 auto; */
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.pagination a {
+	padding: 9px;
+	margin: 6px;
+	border-radius: 4px;
+	background-color: hsla(192, 36%, 40%, 0.15);
+}
+
+.active a {
+	background-color: hsla(192, 36%, 40%, 0.45);
+}
+
+.imgContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 3rem;
+}
+
+.imgContainer1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5.58rem;
+}
+
+img {
+	width: 325px;
+	text-align: center;
+}
+
+@media screen and (max-width: 1050px) {
+	.requestGrid {
+		row-gap: 1.5rem;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 766px) {
+	.requestGrid {
+		row-gap: 1.5rem;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
